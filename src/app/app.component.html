@@ -1,0 +1,29 @@
+<h4><u><i> Form Validation using Angular Material !!</i></u></h4>
+<form [formGroup]="myForm" novalidate fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Enter Name" formControlName="myName" id="myName">
+      <mat-hint align="end">Not more than 20 characters long.</mat-hint>
+      <mat-error *ngIf="myForm.get('myName')?.hasError('required')">Name is required</mat-error>
+      <mat-error *ngIf="myForm.get('myName')?.hasError('maxlength')">Limit exceeded</mat-error>
+    </mat-form-field>
+  </mat-card-content>
+  <br />
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Enter Address" formControlName="myAddress" id="myAddress">
+      <mat-hint align="end">Not more than 50 characters long.</mat-hint>
+      <mat-error *ngIf="myForm.get('myAddress')?.hasError('required')">Address is required</mat-error>
+      <mat-error *ngIf="myForm.get('myAddress')?.hasError('maxlength')">Limit exceeded</mat-error>
+    </mat-form-field>
+  </mat-card-content>
+  <br />
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Enter City" formControlName="myCity" id="myCity">
+      <mat-hint align="end">Not more than 10 characters long.</mat-hint>
+      <mat-error *ngIf="myForm.get('myCity')?.hasError('required')">City is required</mat-error>
+      <mat-error *ngIf="myForm.get('myCity')?.hasError('maxlength')">Limit exceeded</mat-error>
+    </mat-form-field>
+  </mat-card-content>
+</form>
